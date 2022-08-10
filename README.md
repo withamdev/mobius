@@ -1,2 +1,0 @@
-# mobius
-refactor threejs-project
