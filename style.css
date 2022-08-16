@@ -16,3 +16,26 @@ main {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
 }
+
+h1 {
+  font-size: 50px;
+}
+
+#text {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: left;
+  text-shadow: 0 0 3px #ff0000, 0 0 5px #0000ff;
+}
+
+span {
+  animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}

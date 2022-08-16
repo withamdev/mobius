@@ -23,10 +23,11 @@ camera.position.setZ(30);
 const torusGeometry = new THREE.TorusGeometry(4, 0.2, 16, 100);
 const torusMaterial = new THREE.MeshStandardMaterial({
   color: 0xd00000,
+  metalness: 0.5,
 });
 const torus = new THREE.Mesh(torusGeometry, torusMaterial);
 scene.add(torus);
-torus.position.y = 10;
+torus.position.y = 6;
 
 const brickNormal = new THREE.TextureLoader().load("bricknormal.jpg");
 
@@ -34,6 +35,7 @@ const pyrGeometry = new THREE.ConeGeometry(15, 12, 4);
 const pyrMaterial = new THREE.MeshStandardMaterial({
   color: 0xf6ca83,
   normalMap: brickNormal,
+  metalness: 0.7,
 });
 const pyr = new THREE.Mesh(pyrGeometry, pyrMaterial);
 scene.add(pyr);
@@ -48,7 +50,7 @@ const sphMaterial = new THREE.MeshStandardMaterial({
 });
 const sph = new THREE.Mesh(sphGeometry, sphMaterial);
 scene.add(sph);
-sph.position.y = 10;
+sph.position.y = 6;
 
 const pointLight = new THREE.PointLight(0xfdf4dc);
 pointLight.position.set(50, 50, 50);
@@ -64,7 +66,10 @@ scene.add(pointLight, ambientLight);
 
 function addStar() {
   const geometry = new THREE.SphereGeometry(0.25, 24, 24);
-  const material = new THREE.MeshStandardMaterial({ color: 0xffffff });
+  const material = new THREE.MeshStandardMaterial({
+    color: 0xfdf4dc,
+    emissive: 0xfdf4dc,
+  });
   const star = new THREE.Mesh(geometry, material);
 
   const [x, y, z] = Array(3)
