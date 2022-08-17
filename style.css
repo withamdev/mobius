@@ -21,13 +21,47 @@ h1 {
   font-size: 50px;
 }
 
-#text {
-  position: absolute;
+#mobius {
+  /* position: absolute;
   top: 40%;
+  left: 20%;
+  transform: translate(-50%, -50%); */
+  grid-column: 4 / span 6;
+  text-shadow: 0 0 3px #ff0000, 0 0 5px #0000ff;
+}
+
+#textInput {
+  position: fixed;
+  top: 70%;
   left: 50%;
   transform: translate(-50%, -50%);
-  text-align: left;
-  text-shadow: 0 0 3px #ff0000, 0 0 5px #0000ff;
+  z-index: 98;
+  width: 20%;
+  height: fit-content;
+  border: 0;
+  /* box-shadow: -14px 8px 10px;
+  padding: 10px;
+  border-radius: 10px; */
+
+  background-color: transparent;
+  border-bottom: 2px solid #477998;
+  color: white;
+  text-shadow: 0 0 1px #ff0000, 0 0 3px #0000ff;
+  font-size: 20px;
+
+  transition: width 0.4s ease-in-out;
+}
+
+#textInput:focus {
+  width: 40%;
+  outline: none;
+}
+
+#textInput::placeholder {
+  text-shadow: none;
+  color: #f6ca83;
+  text-align: center;
+  font-size: 30px;
 }
 
 span {
